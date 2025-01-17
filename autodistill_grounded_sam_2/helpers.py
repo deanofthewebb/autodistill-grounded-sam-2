@@ -39,7 +39,7 @@ def load_grounding_dino():
             os.makedirs(GROUDNING_DINO_CACHE_DIR)
 
         if not os.path.exists(GROUNDING_DINO_CHECKPOINT_PATH):
-            url = "https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth"
+            url = "https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth" 
             urllib.request.urlretrieve(url, GROUNDING_DINO_CHECKPOINT_PATH)
 
         if not os.path.exists(GROUNDING_DINO_CONFIG_PATH):
@@ -63,7 +63,7 @@ def load_SAM():
     SAM_CACHE_DIR = os.path.join(AUTODISTILL_CACHE_DIR, "segment_anything_2")
     SAM_CHECKPOINT_PATH = os.path.join(SAM_CACHE_DIR, "sam2.1_hiera_large.pth")
 
-    url = "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2.1_hiera_large.pt"
+    url = "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt"
 
     # Create the destination directory if it doesn't exist
     os.makedirs(os.path.dirname(SAM_CHECKPOINT_PATH), exist_ok=True)
@@ -92,9 +92,9 @@ def load_SAM():
     from sam2.build_sam import build_sam2
     from sam2.sam2_image_predictor import SAM2ImagePredictor
 
-    checkpoint = "~/.cache/autodistill/segment_anything_2/sam2_hiera_base_plus.pth"
+    checkpoint = "~/.cache/autodistill/segment_anything_2/sam2.1_hiera_large.pth"
     checkpoint = os.path.expanduser(checkpoint)
-    model_cfg = "sam2_hiera_b+.yaml"
+    model_cfg = "sam2.1_hiera_l+.yaml"
     predictor = SAM2ImagePredictor(build_sam2(model_cfg, checkpoint))
 
     os.chdir(cur_dir)
