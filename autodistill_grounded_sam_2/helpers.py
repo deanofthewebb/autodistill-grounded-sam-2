@@ -94,7 +94,7 @@ def load_SAM():
 
     checkpoint = "~/.cache/autodistill/segment_anything_2/sam2.1_hiera_large.pth"
     checkpoint = os.path.expanduser(checkpoint)
-    model_cfg = "sam2_hiera_l.yaml"
+    model_cfg = "sam2.1_hiera_l.yaml"
     predictor = SAM2ImagePredictor(build_sam2(model_cfg, checkpoint))
 
     os.chdir(cur_dir)
