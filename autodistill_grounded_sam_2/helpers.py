@@ -61,9 +61,9 @@ def load_SAM():
 
     AUTODISTILL_CACHE_DIR = os.path.expanduser("~/.cache/autodistill")
     SAM_CACHE_DIR = os.path.join(AUTODISTILL_CACHE_DIR, "segment_anything_2")
-    SAM_CHECKPOINT_PATH = os.path.join(SAM_CACHE_DIR, "sam2_hiera_base_plus.pth")
+    SAM_CHECKPOINT_PATH = os.path.join(SAM_CACHE_DIR, "sam2.1_hiera_large.pth")
 
-    url = "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_base_plus.pt"
+    url = "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2.1_hiera_large.pt"
 
     # Create the destination directory if it doesn't exist
     os.makedirs(os.path.dirname(SAM_CHECKPOINT_PATH), exist_ok=True)
